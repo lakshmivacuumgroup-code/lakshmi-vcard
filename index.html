@@ -91,14 +91,14 @@ img{max-width:100%;display:block}
 }
 .logo-wrap img{width:64%; height:64%; object-fit:contain;}
 
-.name{position:relative;z-index:2; font-family:var(--font-display); color:#fff; font-size:1.58rem; font-weight:700; letter-spacing:0.8px;}
-.rule{position:relative;z-index:2; display:flex; align-items:center; justify-content:center; gap:8px; margin:13px auto;}
+.name{position:relative;z-index:2; font-family:var(--font-display); color:#fff; font-size:1.3rem; font-weight:600; letter-spacing:0.6px;}
+.rule{position:relative;z-index:2; display:flex; align-items:center; justify-content:center; gap:8px; margin:12px auto;}
 .rule span{width:26px; height:1px; background:linear-gradient(90deg, transparent, var(--gold-2));}
 .rule span.r{background:linear-gradient(90deg, var(--gold-2), transparent);}
 .rule i{font-size:0.4rem; color:var(--gold-2);}
 .title-line{position:relative;z-index:2; color:var(--gold-1); font-size:0.72rem; font-weight:700; letter-spacing:2.2px; text-transform:uppercase;}
-.company-line{position:relative;z-index:2; color:rgba(255,255,255,0.55); font-size:0.8rem; font-weight:500; margin-top:5px; font-style:italic; font-family:var(--font-script); letter-spacing:0.3px;}
-.tagline{position:relative;z-index:2; margin-top:18px; display:inline-block; padding:8px 20px; border-radius:999px; background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.3); color:var(--gold-1); font-size:0.66rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;}
+.company-line{position:relative;z-index:2; color:#fff; font-size:1.28rem; font-weight:700; margin-top:10px; font-family:var(--font-display); letter-spacing:0.3px; line-height:1.3;}
+.tagline{position:relative;z-index:2; margin-top:14px; display:inline-block; padding:5px 15px; border-radius:999px; background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.3); color:var(--gold-1); font-size:0.58rem; font-weight:700; letter-spacing:0.8px; text-transform:uppercase;}
 
 /* ---- Quick action row ---- */
 .actions{display:grid; grid-template-columns:repeat(4,1fr); gap:9px; padding:24px 22px 8px; background:var(--ivory); position:relative;}
@@ -160,6 +160,8 @@ img{max-width:100%;display:block}
 .loc-head i{color:var(--gold-3); font-size:0.92rem;}
 .loc-head span{font-size:0.82rem; font-weight:700; color:var(--navy); font-family:var(--font-display);}
 .loc p{font-size:0.77rem; color:var(--text-sub); line-height:1.6; margin-bottom:10px;}
+.loc-map{width:100%; height:150px; border-radius:11px; overflow:hidden; border:1px solid rgba(212,175,55,0.25); margin-bottom:10px;}
+.loc-map iframe{width:100%; height:100%; border:0; display:block;}
 .loc a{font-size:0.71rem; font-weight:700; color:var(--gold-3); display:inline-flex; align-items:center; gap:6px;}
 .loc a:active{color:var(--navy);}
 
@@ -252,11 +254,13 @@ img{max-width:100%;display:block}
     <div class="loc">
       <div class="loc-head"><i class="fa-solid fa-building"></i><span>Corporate Office</span></div>
       <p>Building 14, M S Industrial Complex, Sub-Registrar Office, No 3, B 05, V I T C, 14th Cross, 2nd Stage, Peenya, Bengaluru, Karnataka 560058</p>
+      <div class="loc-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1013735483257!2d77.51121897381134!3d13.029216013615022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3da2044fba01%3A0x354367ca2da20d9c!2sLakshmi%20vacuum%20technology%20private%20limited!5e0!3m2!1sen!2sin!4v1783941763840!5m2!1sen!2sin" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Corporate Office map"></iframe></div>
       <a href="https://share.google/3kRkUoZpBsTYhvLfR" target="_blank" rel="noopener">Get Directions <i class="fa-solid fa-location-arrow"></i></a>
     </div>
     <div class="loc">
       <div class="loc-head"><i class="fa-solid fa-industry"></i><span>Manufacturing Plant</span></div>
       <p>No. 478 Sompura Industrial Area, 2nd Stage, Thymagondlu, Nelamangala Taluk, Bangalore Rural - 562111, India</p>
+      <div class="loc-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.9897188047735!2d77.27767217381486!3d13.225961709253161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb1d5c64523f20f%3A0x8c0fc916934da9c7!2sLakshmi%20Vacuum%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1783941856126!5m2!1sen!2sin" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Manufacturing Plant map"></iframe></div>
       <a href="https://share.google/J00C6V8VBfWcGXJtG" target="_blank" rel="noopener">Get Directions <i class="fa-solid fa-location-arrow"></i></a>
     </div>
   </div>
