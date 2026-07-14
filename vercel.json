@@ -3,6 +3,13 @@
   "rewrites": [
     {
       "source": "/(.*)",
+      "destination": "/marketing/$1",
+      "has": [
+        { "type": "host", "value": "marketingvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/(.*)",
       "destination": "/managingdirector/$1",
       "has": [
         { "type": "host", "value": "managingdirectorvcard.lakshmivacuum.com" }
