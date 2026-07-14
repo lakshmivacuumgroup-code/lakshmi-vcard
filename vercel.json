@@ -1,15 +1,6 @@
 {
-  "cleanUrls": true
-}{
   "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/marketing/$1",
-      "has": [
-        { "type": "host", "value": "marketingvcard.lakshmivacuum.com" }
-      ]
-    },
     {
       "source": "/(.*)",
       "destination": "/managingdirector/$1",
