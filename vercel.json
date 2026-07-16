@@ -21,6 +21,13 @@
       "has": [
         { "type": "host", "value": "ceovcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/technicalmarketing/$1",
+      "has": [
+        { "type": "host", "value": "technicalmarketingvcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
