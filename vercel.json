@@ -28,6 +28,13 @@
       "has": [
         { "type": "host", "value": "technicalmarketingvcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/directormanufacturing/$1",
+      "has": [
+        { "type": "host", "value": "directormanufacturingvcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
