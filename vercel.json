@@ -35,6 +35,13 @@
       "has": [
         { "type": "host", "value": "directormanufacturingvcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/dgm-sales-service/$1",
+      "has": [
+        { "type": "host", "value": "dgm-sales-service.lakshmivacuum.com" }
+      ]
     }
   ]
 }
