@@ -45,7 +45,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/manager-marketing/$1",
+      "destination": "/uday-kumar/$1",
       "has": [
         { "type": "host", "value": "udaykumarvcard.lakshmivacuum.com" }
       ]
