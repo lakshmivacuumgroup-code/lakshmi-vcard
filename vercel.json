@@ -42,6 +42,13 @@
       "has": [
         { "type": "host", "value": "dgm-sales-service.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/manager-marketing/$1",
+      "has": [
+        { "type": "host", "value": "udaykumarvcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
