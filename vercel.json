@@ -49,6 +49,13 @@
       "has": [
         { "type": "host", "value": "udaykumarvcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/quality-manager/$1",
+      "has": [
+        { "type": "host", "value": "qualitymanagervcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
