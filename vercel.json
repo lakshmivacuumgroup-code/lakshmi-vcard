@@ -59,7 +59,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/hr-executive/$1",
+      "destination": "/hr/$1",
       "has": [
         { "type": "host", "value": "hrvcard.lakshmivacuum.com" }
       ]
