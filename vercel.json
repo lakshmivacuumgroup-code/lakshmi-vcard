@@ -56,6 +56,13 @@
       "has": [
         { "type": "host", "value": "qualitymanagervcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/hr-executive/$1",
+      "has": [
+        { "type": "host", "value": "hrvcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
