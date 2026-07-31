@@ -68,7 +68,7 @@
       "source": "/(.*)",
       "destination": "/vishvadirector/$1",
       "has": [
-        { "type": "host", "value": "vishvadirectorvcard.lakshmivacuumgroup.com" }
+        { "type": "host", "value": "vishvadirectorvcard.lakshmivacuum.com" }
       ]
     }
   ]
