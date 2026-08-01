@@ -70,6 +70,13 @@
       "has": [
         { "type": "host", "value": "vishvadirectorvcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/ppcmanagervcard/$1",
+      "has": [
+        { "type": "host", "value": "ppcmanagervcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
