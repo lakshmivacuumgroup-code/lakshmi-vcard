@@ -77,6 +77,34 @@
       "has": [
         { "type": "host", "value": "ppcmanagervcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/finance-director/$1",
+      "has": [
+        { "type": "host", "value": "financedirectorvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/purchase-manager/$1",
+      "has": [
+        { "type": "host", "value": "purchasemanagervcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/service-engineer/$1",
+      "has": [
+        { "type": "host", "value": "serviceengineervcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/marketing-manager/$1",
+      "has": [
+        { "type": "host", "value": "marketingmanagervcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
