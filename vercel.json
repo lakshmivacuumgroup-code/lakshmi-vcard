@@ -1,8 +1,16 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/:path*",
       "destination": "/marketing/:path*",
+      "has": [
+        { "type": "host", "value": "marketingvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/marketing",
       "has": [
         { "type": "host", "value": "marketingvcard.lakshmivacuum.com" }
       ]
@@ -15,8 +23,22 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/managingdirector",
+      "has": [
+        { "type": "host", "value": "managingdirectorvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "/ceo/:path*",
+      "has": [
+        { "type": "host", "value": "ceovcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/ceo",
       "has": [
         { "type": "host", "value": "ceovcard.lakshmivacuum.com" }
       ]
@@ -29,8 +51,22 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/technicalmarketing",
+      "has": [
+        { "type": "host", "value": "technicalmarketingvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "/directormanufacturing/:path*",
+      "has": [
+        { "type": "host", "value": "directormanufacturingvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/directormanufacturing",
       "has": [
         { "type": "host", "value": "directormanufacturingvcard.lakshmivacuum.com" }
       ]
@@ -43,8 +79,22 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/dgm-sales-service",
+      "has": [
+        { "type": "host", "value": "dgm-sales-service.lakshmivacuum.com" }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "/uday-kumar/:path*",
+      "has": [
+        { "type": "host", "value": "udaykumarvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/uday-kumar",
       "has": [
         { "type": "host", "value": "udaykumarvcard.lakshmivacuum.com" }
       ]
@@ -57,8 +107,22 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/quality-manager",
+      "has": [
+        { "type": "host", "value": "qualitymanagervcard.lakshmivacuum.com" }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "/hr/:path*",
+      "has": [
+        { "type": "host", "value": "hrvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/hr",
       "has": [
         { "type": "host", "value": "hrvcard.lakshmivacuum.com" }
       ]
@@ -71,8 +135,22 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/vishvadirector",
+      "has": [
+        { "type": "host", "value": "vishvadirectorvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "/ppcmanagervcard/:path*",
+      "has": [
+        { "type": "host", "value": "ppcmanagervcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/ppcmanagervcard",
       "has": [
         { "type": "host", "value": "ppcmanagervcard.lakshmivacuum.com" }
       ]
@@ -85,8 +163,22 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/finance-director",
+      "has": [
+        { "type": "host", "value": "financedirectorvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "/purchase-manager/:path*",
+      "has": [
+        { "type": "host", "value": "purchasemanagervcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/purchase-manager",
       "has": [
         { "type": "host", "value": "purchasemanagervcard.lakshmivacuum.com" }
       ]
@@ -99,8 +191,22 @@
       ]
     },
     {
+      "source": "/",
+      "destination": "/vinay-kumar",
+      "has": [
+        { "type": "host", "value": "vinaykumarmgvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "/arsalan-ayub/:path*",
+      "has": [
+        { "type": "host", "value": "arsalanayubvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/arsalan-ayub",
       "has": [
         { "type": "host", "value": "arsalanayubvcard.lakshmivacuum.com" }
       ]
