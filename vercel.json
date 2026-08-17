@@ -94,16 +94,16 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/service-engineer/$1",
+      "destination": "/vinay-kumar/$1",
       "has": [
-        { "type": "host", "value": "serviceengineervcard.lakshmivacuum.com" }
+        { "type": "host", "value": "vinaykumarmgvcard.lakshmivacuum.com" }
       ]
     },
     {
       "source": "/(.*)",
-      "destination": "/marketing-manager/$1",
+      "destination": "/arsalan-ayub/$1",
       "has": [
-        { "type": "host", "value": "marketingmanagervcard.lakshmivacuum.com" }
+        { "type": "host", "value": "arsalanayubvcard.lakshmivacuum.com" }
       ]
     }
   ]
