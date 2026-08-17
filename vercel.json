@@ -210,6 +210,20 @@
       "has": [
         { "type": "host", "value": "arsalanayubvcard.lakshmivacuum.com" }
       ]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/sharath-shastry/:path*",
+      "has": [
+        { "type": "host", "value": "sharathshastryvcard.lakshmivacuum.com" }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/sharath-shastry",
+      "has": [
+        { "type": "host", "value": "sharathshastryvcard.lakshmivacuum.com" }
+      ]
     }
   ]
 }
