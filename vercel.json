@@ -199,14 +199,14 @@
     },
     {
       "source": "/:path*",
-      "destination": "/arsalan-ayub/:path*",
+      "destination": "/arsalanayub/:path*",
       "has": [
         { "type": "host", "value": "arsalanayubvcard.lakshmivacuum.com" }
       ]
     },
     {
       "source": "/",
-      "destination": "/arsalan-ayub",
+      "destination": "/arsalanayub",
       "has": [
         { "type": "host", "value": "arsalanayubvcard.lakshmivacuum.com" }
       ]
