@@ -69,6 +69,21 @@ img{max-width:100%;display:block}
   background-image:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size:26px 26px; pointer-events:none;
 }
+
+/* Share Button */
+.share-btn{
+  position:absolute; top:18px; right:18px; z-index:5;
+  width:38px; height:38px; border-radius:50%;
+  background:linear-gradient(135deg, var(--gold-1), var(--gold-3));
+  color:var(--navy);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.95rem;
+  box-shadow:0 6px 18px rgba(212,175,55,0.35), 0 1px 0 rgba(255,255,255,0.4) inset;
+  transition:all 0.3s var(--ease-out);
+}
+.share-btn:active{ transform:scale(0.92); box-shadow:0 3px 8px rgba(212,175,55,0.35); }
+.share-btn i{color:var(--navy);}
+
 .monogram-wm{
   position:absolute; z-index:1; top:50%; left:50%; transform:translate(-50%,-52%);
   font-family:var(--font-display); font-size:9.5rem; font-weight:700; letter-spacing:2px;
@@ -191,6 +206,7 @@ img{max-width:100%;display:block}
 <div class="card">
 
   <div class="top">
+    <a href="#" id="waShareBtn" class="share-btn" aria-label="Share on WhatsApp"><i class="fa-solid fa-share-nodes"></i></a>
     <div class="monogram-wm">LVT</div>
     <div class="ring ring--1"><span class="ring--dot"></span></div>
     <div class="ring ring--2"></div>
@@ -310,6 +326,18 @@ document.getElementById('saveContactBtn').addEventListener('click', function(e){
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+});
+
+document.getElementById('waShareBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  var shareText = "Check out the digital business card of G Narayana Swamy (Manager - Purchase) at Lakshmi Vacuum Technologies.";
+  var cardUrl = window.location.href;
+  // Fallback if the card is opened directly from the local file system
+  if (cardUrl.indexOf('file') === 0 || cardUrl === 'about:blank' || cardUrl === '') {
+    cardUrl = 'https://www.lakshmivacuum.com';
+  }
+  var waUrl = 'https://wa.me/?text=' + encodeURIComponent(shareText + ' ' + cardUrl);
+  window.open(waUrl, '_blank');
 });
 </script>
 
