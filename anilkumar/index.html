@@ -41,6 +41,21 @@ img{max-width:100%;display:block}
 .card::after{content:''; position:absolute; inset:0; pointer-events:none; opacity:0.5; mix-blend-mode:multiply; background-image:radial-gradient(rgba(15,23,42,0.018) 1px, transparent 1px); background-size:3px 3px;}
 .top{position:relative; background:linear-gradient(160deg,#080c18 0%,var(--navy) 45%,var(--navy-2) 100%); padding:44px 28px 34px; text-align:center; overflow:hidden;}
 .top::before{content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size:26px 26px; pointer-events:none;}
+
+/* Share Button */
+.share-btn{
+  position:absolute; top:18px; right:18px; z-index:5;
+  width:38px; height:38px; border-radius:50%;
+  background:linear-gradient(135deg, var(--gold-1), var(--gold-3));
+  color:var(--navy);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.95rem;
+  box-shadow:0 6px 18px rgba(212,175,55,0.35), 0 1px 0 rgba(255,255,255,0.4) inset;
+  transition:all 0.3s var(--ease-out);
+}
+.share-btn:active{ transform:scale(0.92); box-shadow:0 3px 8px rgba(212,175,55,0.35); }
+.share-btn i{color:var(--navy);}
+
 .monogram-wm{position:absolute; z-index:1; top:50%; left:50%; transform:translate(-50%,-52%); font-family:var(--font-display); font-size:9.5rem; font-weight:700; letter-spacing:2px; color:rgba(212,175,55,0.045); pointer-events:none; user-select:none; white-space:nowrap;}
 .ring{position:absolute; border-radius:50%; pointer-events:none; left:50%; top:84px; transform:translate(-50%,-50%); z-index:1;}
 .ring--1{width:156px;height:156px;border:1px dashed rgba(212,175,55,0.28); animation:spin 30s linear infinite;}
@@ -115,6 +130,7 @@ img{max-width:100%;display:block}
 <div class="frame">
 <div class="card">
   <div class="top">
+    <a href="#" id="shareBtn" class="share-btn" aria-label="Share on WhatsApp"><i class="fa-solid fa-share-nodes"></i></a>
     <div class="monogram-wm">LVH</div>
     <div class="ring ring--1"><span class="ring--dot"></span></div>
     <div class="ring ring--2"></div>
@@ -145,26 +161,18 @@ img{max-width:100%;display:block}
     <div class="section-title"><i class="fa-solid fa-gem"></i>Explore</div>
     <div class="link-list">
       <a class="link-item" href="https://www.lakshmivacuum.com/Vacuum-heat-treatment-unit-coimbatore.html" target="_blank" rel="noopener"><div class="link-icon"><i class="fa-solid fa-industry"></i></div><div class="link-text"><div class="t1">Coimbatore Unit</div><div class="t2">Details about our Coimbatore facility</div></div><i class="fa-solid fa-arrow-right"></i></a>
-      <a class="link-item" href="https://www.lakshmivacuum.com/Vacuum-heat-treatment-unit-hyderabad.html" target="_blank" rel="noopener"><div class="link-icon"><i class="fa-solid fa-industry"></i></div><div class="link-text"><div class="t1">Hyderabad Unit</div><div class="t2">Details about our Hyderabad facility</div></div><i class="fa-solid fa-arrow-right"></i></a>
       <a class="link-item" href="https://www.lakshmivacuum.com/contact.html" target="_blank" rel="noopener"><div class="link-icon"><i class="fa-solid fa-headset"></i></div><div class="link-text"><div class="t1">Contact Us</div><div class="t2">Talk to the LVH team</div></div><i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title"><i class="fa-solid fa-gem"></i>Locations</div>
+    <div class="section-title"><i class="fa-solid fa-gem"></i>Location</div>
     <div class="loc">
       <div class="loc-head"><i class="fa-solid fa-industry"></i><span>Coimbatore Branch</span></div>
       <p>#464/2, Varathiyangarpalayam, Kondayampalayam Post, Sarkarsamakulam Village, Coimbatore - 641 110</p>
       <div class="loc-map"><iframe src="https://maps.google.com/maps?q=11.0168,76.9558&z=15&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Coimbatore map"></iframe></div>
       <a href="https://www.lakshmivacuum.com/Vacuum-heat-treatment-unit-coimbatore.html" target="_blank" rel="noopener">View Coimbatore Unit Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a><br>
       <a href="https://www.google.com/maps/search/?api=1&query=11.0168,76.9558" target="_blank" rel="noopener">Get Directions <i class="fa-solid fa-location-arrow"></i></a>
-    </div>
-    <div class="loc">
-      <div class="loc-head"><i class="fa-solid fa-industry"></i><span>Hyderabad Branch</span></div>
-      <p>GFH5+X37, Phase V, IDA Jeedimetla, Jeedimetla, Hyderabad, Telangana 500100</p>
-      <div class="loc-map"><iframe src="https://maps.google.com/maps?q=17.385,78.4867&z=15&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Hyderabad map"></iframe></div>
-      <a href="https://www.lakshmivacuum.com/Vacuum-heat-treatment-unit-hyderabad.html" target="_blank" rel="noopener">View Hyderabad Unit Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a><br>
-      <a href="https://www.google.com/maps/search/?api=1&query=17.385,78.4867" target="_blank" rel="noopener">Get Directions <i class="fa-solid fa-location-arrow"></i></a>
     </div>
   </div>
 
@@ -186,7 +194,7 @@ img{max-width:100%;display:block}
   <div class="foot">
     <div class="brand">Lakshmi Vacuum Heat Treaters Pvt Ltd</div>
     <div class="est">Established 2003</div>
-    <p>Coimbatore Branch &amp; Hyderabad Branch<br>www.lakshmivacuum.com</p>
+    <p>Coimbatore Branch<br>www.lakshmivacuum.com</p>
   </div>
 </div>
 </div>
@@ -203,6 +211,17 @@ document.getElementById('saveContactBtn').addEventListener('click', function(e){
   var a = document.createElement('a');
   a.href = url; a.download = 'Anil-Kumar-LVH.vcf';
   document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+});
+
+document.getElementById('shareBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  var cardUrl = window.location.href;
+  // Fallback if the card is opened directly from the local file system
+  if (cardUrl.indexOf('file') === 0 || cardUrl === 'about:blank' || cardUrl === '') {
+    cardUrl = 'https://www.lakshmivacuum.com';
+  }
+  var waUrl = 'https://wa.me/?text=' + encodeURIComponent(cardUrl);
+  window.open(waUrl, '_blank');
 });
 </script>
 </body>
