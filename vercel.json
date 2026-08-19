@@ -1,3 +1,4 @@
+
 {
   "cleanUrls": true,
   "rewrites": [
@@ -203,12 +204,12 @@
     },
     {
       "source": "/:path*",
-      "destination": "/ramprasad/:path*",
+      "destination": "/ramprasadvcard/:path*",
       "has": [{ "type": "host", "value": "ramprasadvcard.lakshmivacuum.com" }]
     },
     {
       "source": "/",
-      "destination": "/ramprasad",
+      "destination": "/ramprasadvcard",
       "has": [{ "type": "host", "value": "ramprasadvcard.lakshmivacuum.com" }]
     }
   ]
