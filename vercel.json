@@ -213,12 +213,12 @@
     },
     {
       "source": "/:path*",
-      "destination": "/ganesh-prasad/:path*",
+      "destination": "/ganeshprasad/:path*",
       "has": [{ "type": "host", "value": "ganeshprasadvcard.lakshmivacuum.com" }]
     },
     {
       "source": "/",
-      "destination": "/ganesh-prasad",
+      "destination": "/ganeshprasad",
       "has": [{ "type": "host", "value": "ganeshprasadvcard.lakshmivacuum.com" }]
     }
   ]
