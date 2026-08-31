@@ -210,6 +210,16 @@
       "source": "/",
       "destination": "/ramprasadvcard",
       "has": [{ "type": "host", "value": "ramprasadvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/ganesh-prasad/:path*",
+      "has": [{ "type": "host", "value": "ganeshprasadvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/ganesh-prasad",
+      "has": [{ "type": "host", "value": "ganeshprasadvcard.lakshmivacuum.com" }]
     }
   ]
 }
