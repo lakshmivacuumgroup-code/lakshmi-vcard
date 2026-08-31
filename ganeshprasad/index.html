@@ -84,11 +84,6 @@ img{max-width:100%;display:block}
 .share-btn:active{ transform:scale(0.92); box-shadow:0 3px 8px rgba(212,175,55,0.35); }
 .share-btn i{color:var(--navy);}
 
-.monogram-wm{
-  position:absolute; z-index:1; top:50%; left:50%; transform:translate(-50%,-52%);
-  font-family:var(--font-display); font-size:9.5rem; font-weight:700; letter-spacing:2px;
-  color:rgba(212,175,55,0.045); pointer-events:none; user-select:none; white-space:nowrap;
-}
 .ring{position:absolute; border-radius:50%; pointer-events:none; left:50%; top:84px; transform:translate(-50%,-50%); z-index:1;}
 .ring--1{width:156px;height:156px;border:1px dashed rgba(212,175,55,0.28); animation:spin 30s linear infinite;}
 .ring--2{width:204px;height:204px;border:1px dotted rgba(255,255,255,0.08); animation:spin 46s linear infinite reverse;}
@@ -104,12 +99,7 @@ img{max-width:100%;display:block}
   display:flex; align-items:center; justify-content:center;
   box-shadow:0 0 0 7px rgba(212,175,55,0.10), 0 1px 0 rgba(255,255,255,0.4) inset, 0 14px 34px rgba(0,0,0,0.4);
 }
-.logo-wrap img{width:64%; height:64%; object-fit:contain; position:relative; z-index:1;}
-.logo-fallback{
-  position:absolute; z-index:0;
-  font-family:var(--font-display); font-weight:700; color:var(--navy);
-  font-size:1.7rem; letter-spacing:1px;
-}
+.logo-wrap img{width:64%; height:64%; object-fit:contain;}
 
 .name{position:relative;z-index:2; font-family:var(--font-display); color:#fff; font-size:1.3rem; font-weight:600; letter-spacing:0.6px;}
 .rule{position:relative;z-index:2; display:flex; align-items:center; justify-content:center; gap:8px; margin:12px auto;}
@@ -212,12 +202,10 @@ img{max-width:100%;display:block}
 
   <div class="top">
     <a href="#" id="shareBtn" class="share-btn" aria-label="Share on WhatsApp"><i class="fa-solid fa-share-nodes"></i></a>
-    <div class="monogram-wm">LVT</div>
     <div class="ring ring--1"><span class="ring--dot"></span></div>
     <div class="ring ring--2"></div>
     <div class="kicker">Digital Business Card</div>
     <div class="logo-wrap">
-      <span class="logo-fallback" aria-hidden="true">LVT</span>
       <img src="logo.png" alt="Lakshmi Vacuum Technologies logo"
            onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://www.lakshmivacuum.com/marketing/logo.png';}else{this.style.display='none';}">
     </div>
