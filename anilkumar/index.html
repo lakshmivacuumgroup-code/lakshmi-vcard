@@ -7,7 +7,7 @@
 <meta name="description" content="Digital business card — Anil Kumar L, Plant Manager, Lakshmi Vacuum Heat Treaters Pvt Ltd." />
 <meta name="theme-color" content="#0B1220" />
 <meta property="og:title" content="Anil Kumar L | Lakshmi Vacuum Heat Treaters" />
-<meta property="og:description" content="Plant Manager. Revolutionizing Vacuum Heat Treatment." />
+<meta property="og:description" content="Plant Manager. Revolutionizing Vacuum Technology." />
 <meta property="og:image" content="/marketing/logo.png" />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/png" href="/marketing/logo.png">
@@ -141,7 +141,7 @@ img{max-width:100%;display:block}
     <div class="title-line">Plant Manager</div>
     <div class="mini-rule"></div>
     <div class="company-line">Lakshmi Vacuum Heat Treaters Pvt Ltd</div>
-    <div class="tagline">Revolutionizing Vacuum Heat Treatment</div>
+    <div class="tagline">Revolutionizing Vacuum Technology</div>
   </div>
 
   <div class="actions">
@@ -205,7 +205,7 @@ if (typeof QRCode !== 'undefined') {
 }
 document.getElementById('saveContactBtn').addEventListener('click', function(e){
   e.preventDefault();
-  var vcf = ['BEGIN:VCARD','VERSION:3.0','N:Kumar;Anil;L;;','FN:Anil Kumar L','ORG:Lakshmi Vacuum Heat Treaters Pvt Ltd','TITLE:Plant Manager','TEL;TYPE=CELL:+919043333522','EMAIL;TYPE=WORK:coimbatore@lakshmivacuum.com','URL:https://www.lakshmivacuum.com','ADR;TYPE=WORK:;;Kondayampalayam Rd, Coimbatore North Sub-District;Coimbatore;Tamil Nadu;641107;India','NOTE:Revolutionizing Vacuum Heat Treatment','END:VCARD'].join('\r\n');
+  var vcf = ['BEGIN:VCARD','VERSION:3.0','N:Kumar;Anil;L;;','FN:Anil Kumar L','ORG:Lakshmi Vacuum Heat Treaters Pvt Ltd','TITLE:Plant Manager','TEL;TYPE=CELL:+919043333522','EMAIL;TYPE=WORK:coimbatore@lakshmivacuum.com','URL:https://www.lakshmivacuum.com','ADR;TYPE=WORK:;;Kondayampalayam Rd, Coimbatore North Sub-District;Coimbatore;Tamil Nadu;641107;India','NOTE:Revolutionizing Vacuum Technology','END:VCARD'].join('\r\n');
   var blob = new Blob([vcf], {type:'text/vcard;charset=utf-8'});
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
@@ -223,6 +223,19 @@ document.getElementById('shareBtn').addEventListener('click', function(e){
   var waUrl = 'https://wa.me/?text=' + encodeURIComponent(cardUrl);
   window.open(waUrl, '_blank');
 });
+</script>
+<script>
+var t=document.querySelector('.top');
+if(t && !document.getElementById('shareTopIcon')){
+    var s=document.createElement('a');
+    s.id='shareTopIcon';
+    s.href='https://wa.me/?text='+encodeURIComponent('Check out my digital business card: '+window.location.href);
+    s.target='_blank';
+    s.rel='noopener';
+    s.innerHTML='<i class="fa-solid fa-share-nodes"></i>';
+    s.style.cssText='position:absolute;top:16px;right:16px;z-index:10;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#F6E7A8,#D4AF37 55%,#9C7A24);color:#0B1220;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 12px rgba(0,0,0,0.4);';
+    t.appendChild(s);
+}
 </script>
 </body>
 </html>

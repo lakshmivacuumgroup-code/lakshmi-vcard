@@ -198,7 +198,7 @@ img{max-width:100%;display:block}
     <div class="title-line">Technical - Marketing</div>
     <div class="mini-rule"></div>
     <div class="company-line">Lakshmi Vacuum Technologies Pvt Ltd</div>
-    <div class="tagline">Revolutionizing Vacuum Heat Treatment</div>
+    <div class="tagline">Revolutionizing Vacuum Technology</div>
   </div>
 
   <!-- Quick actions -->
@@ -312,7 +312,7 @@ document.getElementById('saveContactBtn').addEventListener('click', function(e){
     'EMAIL;TYPE=WORK:marketingservice@lakshmivacuum.com',
     'URL:https://www.lakshmivacuum.com',
     'ADR;TYPE=WORK:;;Building 14, M S Industrial Complex, Sub-Registrar Office, No 3, B 05, V I T C, 14th Cross, 2nd Stage, Peenya;Bengaluru;Karnataka;560058;India',
-    'NOTE:Revolutionizing Vacuum Heat Treatment',
+    'NOTE:Revolutionizing Vacuum Technology',
     'END:VCARD'
   ].join('\r\n');
   var blob = new Blob([vcf], {type:'text/vcard;charset=utf-8'});
@@ -327,5 +327,18 @@ document.getElementById('saveContactBtn').addEventListener('click', function(e){
 });
 </script>
 
+<script>
+var t=document.querySelector('.top');
+if(t && !document.getElementById('shareTopIcon')){
+    var s=document.createElement('a');
+    s.id='shareTopIcon';
+    s.href='https://wa.me/?text='+encodeURIComponent('Check out my digital business card: '+window.location.href);
+    s.target='_blank';
+    s.rel='noopener';
+    s.innerHTML='<i class="fa-solid fa-share-nodes"></i>';
+    s.style.cssText='position:absolute;top:16px;right:16px;z-index:10;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#F6E7A8,#D4AF37 55%,#9C7A24);color:#0B1220;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 12px rgba(0,0,0,0.4);';
+    t.appendChild(s);
+}
+</script>
 </body>
 </html>
