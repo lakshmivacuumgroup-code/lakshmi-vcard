@@ -220,6 +220,16 @@
       "source": "/",
       "destination": "/ganeshprasad",
       "has": [{ "type": "host", "value": "ganeshprasadvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/bdm/:path*",
+      "has": [{ "type": "host", "value": "bdmvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/bdm",
+      "has": [{ "type": "host", "value": "bdmvcard.lakshmivacuum.com" }]
     }
   ]
 }
