@@ -230,6 +230,16 @@
       "source": "/",
       "destination": "/bdm",
       "has": [{ "type": "host", "value": "bdmvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/naveenkumar/:path*",
+      "has": [{ "type": "host", "value": "naveenkumarvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/naveenkumar",
+      "has": [{ "type": "host", "value": "naveenkumarvcard.lakshmivacuum.com" }]
     }
   ]
 }
