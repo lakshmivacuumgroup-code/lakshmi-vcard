@@ -250,6 +250,16 @@
       "source": "/",
       "destination": "/maanikchandvcard",
       "has": [{ "type": "host", "value": "maanikchandvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/piyushvcard/:path*",
+      "has": [{ "type": "host", "value": "piyushvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/piyushvcard",
+      "has": [{ "type": "host", "value": "piyushvcard.lakshmivacuum.com" }]
     }
   ]
 }
