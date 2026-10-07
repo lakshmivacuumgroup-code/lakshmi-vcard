@@ -291,7 +291,26 @@
       "source": "/",
       "destination": "/panchshilchavan",
       "has": [{ "type": "host", "value": "panchshilchavan.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/himanshusingnvcard/:path*",
+      "has": [{ "type": "host", "value": "himanshusingnvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/himanshusingnvcard",
+      "has": [{ "type": "host", "value": "himanshusingnvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/vinaykumarvcard/:path*",
+      "has": [{ "type": "host", "value": "vinaykumarvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/vinaykumarvcard",
+      "has": [{ "type": "host", "value": "vinaykumarvcard.lakshmivacuum.com" }]
     }
   ]
 }
-
