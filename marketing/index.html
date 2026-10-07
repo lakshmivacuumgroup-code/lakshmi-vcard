@@ -9,7 +9,6 @@
 <link rel="icon" type="image/png" href="logo.png" />
 <link rel="apple-touch-icon" href="logo.png" />
 
-<!-- Preview shown when this link is shared on WhatsApp / LinkedIn -->
 <meta property="og:title" content="Manjunath B.C. — Manager Marketing" />
 <meta property="og:description" content="Lakshmi Vacuum Technologies Pvt Ltd · Revolutionizing Vacuum Technology since 2003" />
 <meta property="og:type" content="website" />
@@ -51,11 +50,7 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius:8px}
 
-/* ═══════════════════════════════════════════════════
-   STICKY DOCK — 50/50 EQUAL SPLIT
-   Download Brochure (gold) + Save Contact (navy)
-   Both buttons: identical size, identical layout.
-   ═══════════════════════════════════════════════════ */
+/* ═══ STICKY DOCK — 50/50 EQUAL BUTTONS ═══ */
 .dock{
   position:sticky;top:10px;z-index:60;
   width:100%;max-width:412px;margin:0 auto 14px;
@@ -212,7 +207,7 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
   box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 3px 10px rgba(11,18,32,.05);transition:all .3s var(--ease)}
 .social-btn:active{background:var(--navy);color:var(--gold-1);transform:scale(.92);border-color:var(--navy)}
 
-/* ---- QR ---- */
+/* ---- QR card (on-page QR → company website) ---- */
 .qr-wrap{display:flex;justify-content:center}
 .qr-card{position:relative;background:#fff;border:1px solid rgba(212,175,55,.35);border-radius:16px;
   padding:24px 26px 18px;text-align:center;max-width:220px;
@@ -226,6 +221,18 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
 .qr-card p{font-family:var(--fd);font-size:.73rem;font-weight:700;color:var(--navy);line-height:1.45}
 .qr-card p span{display:block;margin-top:4px;font-family:var(--fs);font-style:italic;font-weight:500;
   color:var(--text-sub);font-size:.8rem}
+
+/* ---- printable QR download (external QR → opens THIS card) ---- */
+.qr-actions{display:flex;flex-direction:column;align-items:center;margin-top:16px}
+.qr-dl{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;
+  background:#fff;border:1px solid rgba(212,175,55,.4);color:var(--gold-3);
+  font-family:var(--fb);font-size:.66rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+  cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 2px 8px rgba(11,18,32,.05);
+  transition:all .25s var(--ease)}
+.qr-dl:active{background:var(--navy);color:var(--gold-1);border-color:var(--navy);transform:scale(.96)}
+.qr-dl i{font-size:.72rem}
+.qr-note{margin-top:9px;text-align:center;font-size:.62rem;color:var(--text-sub);
+  letter-spacing:.2px;line-height:1.55;max-width:300px}
 
 /* ---- footer ---- */
 .foot{position:relative;background:linear-gradient(180deg,var(--navy) 0%,#080D1A 100%);
@@ -259,7 +266,6 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
 
-/* ---- very small phones ---- */
 @media (max-width:352px){
   body{padding:20px 10px 36px}
   .dock-btn .lbl{font-size:.64rem}
@@ -389,17 +395,27 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
     </div>
   </section>
 
-  <!-- ═══ QR ═══ -->
+  <!-- ═══ QR #1 — ON-PAGE QR: scans open the COMPANY WEBSITE ═══ -->
   <section class="section qr-sec">
-    <h2 class="section-title"><i class="fa-solid fa-diamond"></i>Share This Card</h2>
+    <h2 class="section-title"><i class="fa-solid fa-diamond"></i>Scan &amp; Connect</h2>
     <div class="qr-wrap">
       <div class="qr-card">
         <span class="corner tl"></span><span class="corner tr"></span>
         <span class="corner bl"></span><span class="corner br"></span>
-        <div id="qrcode" role="img" aria-label="QR code linking to this digital business card"></div>
-        <p>Scan to open this card<span>any phone camera works</span></p>
+        <div id="qrcode" role="img" aria-label="QR code to the Lakshmi Vacuum Technologies website"></div>
+        <p>Scan to visit our website<span>www.lakshmivacuum.com</span></p>
       </div>
     </div>
+
+    <!-- QR #2 — PRINTABLE QR: scans open THIS DIGITAL CARD.
+         Hidden here, generated as a high-res PNG by the button below. -->
+    <div class="qr-actions">
+      <button class="qr-dl" id="qrDownloadBtn" type="button">
+        <i class="fa-solid fa-print"></i> Download printable QR
+      </button>
+      <p class="qr-note">Print this QR on visiting cards, standees &amp; posters —<br>scanning it opens this digital business card</p>
+    </div>
+    <div id="qrprint" style="display:none" aria-hidden="true"></div>
   </section>
 
   <!-- ═══ FOOTER ═══ -->
@@ -421,10 +437,13 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
 (function(){
 'use strict';
 
-/* This card's own URL — used for QR code + share button */
-var cardUrl = (location.protocol === 'http:' || location.protocol === 'https:')
-  ? location.origin + location.pathname
-  : 'https://marketingvcard.lakshmivacuum.com/';
+/* ═══ THE TWO LINKS — edit only these lines if anything ever changes ═══ */
+
+/* QR #1 (visible on the page) → company website */
+var WEBSITE_URL = 'https://lakshmivacuum.com/';
+
+/* QR #2 (printable/downloadable) → THIS digital business card */
+var CARD_URL = 'https://marketingvcard.lakshmivacuum.com/';
 
 /* ---- Toast ---- */
 var toastEl = document.getElementById('toast'), toastTimer = null;
@@ -435,21 +454,68 @@ function showToast(msg){
   toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2800);
 }
 
-/* ---- QR code (opens this card on any phone) ---- */
+/* ═══ QR #1 — on-page QR → opens the company website ═══ */
 var qrEl = document.getElementById('qrcode');
 if (qrEl) {
   if (typeof QRCode !== 'undefined') {
     new QRCode(qrEl, {
-      text: cardUrl,
+      text: WEBSITE_URL,
       width: 150, height: 150,
       colorDark: '#0B1220', colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.M
     });
   } else {
     var fb = document.createElement('a');
-    fb.href = cardUrl; fb.target = '_blank'; fb.rel = 'noopener';
-    fb.textContent = cardUrl;
+    fb.href = WEBSITE_URL; fb.target = '_blank'; fb.rel = 'noopener';
+    fb.textContent = WEBSITE_URL;
     qrEl.appendChild(fb);
+  }
+}
+
+/* ═══ QR #2 — hidden high-res QR → opens THIS card (for printing) ═══ */
+var qrPrintEl = document.getElementById('qrprint');
+if (qrPrintEl && typeof QRCode !== 'undefined') {
+  new QRCode(qrPrintEl, {
+    text: CARD_URL,
+    width: 600, height: 600,
+    colorDark: '#000000', colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+}
+
+/* ---- Download printable QR → saves 700×700 PNG with white border ---- */
+var qrDlBtn = document.getElementById('qrDownloadBtn');
+if (qrDlBtn) {
+  if (typeof QRCode === 'undefined') {
+    qrDlBtn.style.display = 'none';
+  } else {
+    qrDlBtn.addEventListener('click', function(){
+      var c  = qrPrintEl ? qrPrintEl.querySelector('canvas') : null;
+      var im = qrPrintEl ? qrPrintEl.querySelector('img') : null;
+      var dataUrl = null;
+      if (c) { dataUrl = c.toDataURL('image/png'); }
+      else if (im && im.src && im.src.indexOf('data:image') === 0) { dataUrl = im.src; }
+
+      if (!dataUrl) { showToast('QR not ready yet — try again in a second'); return; }
+
+      var srcImg = new Image();
+      srcImg.onload = function(){
+        var out = document.createElement('canvas');
+        out.width = 700; out.height = 700;               /* white quiet zone for reliable scanning */
+        var ctx = out.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, 700, 700);
+        ctx.drawImage(srcImg, 50, 50, 600, 600);
+        var a = document.createElement('a');
+        a.href = out.toDataURL('image/png');
+        a.download = 'LVT-vCard-printable-QR.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast('Printable QR saved — scanning it opens this card');
+      };
+      srcImg.src = dataUrl;
+    });
   }
 }
 
@@ -490,7 +556,7 @@ if (broBtn) {
   broBtn.addEventListener('click', function(){ showToast('Downloading company brochure…'); });
 }
 
-/* ---- Share button (phone share sheet, else WhatsApp) ---- */
+/* ---- Share button (phone share sheet, else WhatsApp) — shares this card ---- */
 var shareBtn = document.getElementById('shareBtn');
 if (shareBtn) {
   shareBtn.addEventListener('click', function(e){
@@ -498,12 +564,12 @@ if (shareBtn) {
     var data = {
       title: 'Manjunath B.C. — Lakshmi Vacuum Technologies',
       text: 'Here is my digital business card:',
-      url: cardUrl
+      url: CARD_URL
     };
     if (navigator.share) {
       navigator.share(data).catch(function(){});
     } else {
-      window.open('https://wa.me/?text=' + encodeURIComponent(data.text + ' ' + cardUrl), '_blank', 'noopener');
+      window.open('https://wa.me/?text=' + encodeURIComponent(data.text + ' ' + CARD_URL), '_blank', 'noopener');
     }
   });
 }
