@@ -207,7 +207,7 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
   box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 3px 10px rgba(11,18,32,.05);transition:all .3s var(--ease)}
 .social-btn:active{background:var(--navy);color:var(--gold-1);transform:scale(.92);border-color:var(--navy)}
 
-/* ---- QR card (on-page QR → company website) ---- */
+/* ---- QR card (single QR → company website) ---- */
 .qr-wrap{display:flex;justify-content:center}
 .qr-card{position:relative;background:#fff;border:1px solid rgba(212,175,55,.35);border-radius:16px;
   padding:24px 26px 18px;text-align:center;max-width:220px;
@@ -221,18 +221,6 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
 .qr-card p{font-family:var(--fd);font-size:.73rem;font-weight:700;color:var(--navy);line-height:1.45}
 .qr-card p span{display:block;margin-top:4px;font-family:var(--fs);font-style:italic;font-weight:500;
   color:var(--text-sub);font-size:.8rem}
-
-/* ---- printable QR download (external QR → opens THIS card) ---- */
-.qr-actions{display:flex;flex-direction:column;align-items:center;margin-top:16px}
-.qr-dl{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;
-  background:#fff;border:1px solid rgba(212,175,55,.4);color:var(--gold-3);
-  font-family:var(--fb);font-size:.66rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
-  cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 2px 8px rgba(11,18,32,.05);
-  transition:all .25s var(--ease)}
-.qr-dl:active{background:var(--navy);color:var(--gold-1);border-color:var(--navy);transform:scale(.96)}
-.qr-dl i{font-size:.72rem}
-.qr-note{margin-top:9px;text-align:center;font-size:.62rem;color:var(--text-sub);
-  letter-spacing:.2px;line-height:1.55;max-width:300px}
 
 /* ---- footer ---- */
 .foot{position:relative;background:linear-gradient(180deg,var(--navy) 0%,#080D1A 100%);
@@ -395,7 +383,7 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
     </div>
   </section>
 
-  <!-- ═══ QR #1 — ON-PAGE QR: scans open the COMPANY WEBSITE ═══ -->
+  <!-- ═══ QR — SINGLE QR → COMPANY WEBSITE ═══ -->
   <section class="section qr-sec">
     <h2 class="section-title"><i class="fa-solid fa-diamond"></i>Scan &amp; Connect</h2>
     <div class="qr-wrap">
@@ -406,16 +394,6 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
         <p>Scan to visit our website<span>www.lakshmivacuum.com</span></p>
       </div>
     </div>
-
-    <!-- QR #2 — PRINTABLE QR: scans open THIS DIGITAL CARD.
-         Hidden here, generated as a high-res PNG by the button below. -->
-    <div class="qr-actions">
-      <button class="qr-dl" id="qrDownloadBtn" type="button">
-        <i class="fa-solid fa-print"></i> Download printable QR
-      </button>
-      <p class="qr-note">Print this QR on visiting cards, standees &amp; posters —<br>scanning it opens this digital business card</p>
-    </div>
-    <div id="qrprint" style="display:none" aria-hidden="true"></div>
   </section>
 
   <!-- ═══ FOOTER ═══ -->
@@ -437,12 +415,10 @@ a:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;border-radius
 (function(){
 'use strict';
 
-/* ═══ THE TWO LINKS — edit only these lines if anything ever changes ═══ */
-
-/* QR #1 (visible on the page) → company website */
+/* QR on the card → company website */
 var WEBSITE_URL = 'https://lakshmivacuum.com/';
 
-/* QR #2 (printable/downloadable) → THIS digital business card */
+/* This card's own URL — used ONLY by the share button */
 var CARD_URL = 'https://marketingvcard.lakshmivacuum.com/';
 
 /* ---- Toast ---- */
@@ -454,7 +430,7 @@ function showToast(msg){
   toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2800);
 }
 
-/* ═══ QR #1 — on-page QR → opens the company website ═══ */
+/* ---- QR code → company website ---- */
 var qrEl = document.getElementById('qrcode');
 if (qrEl) {
   if (typeof QRCode !== 'undefined') {
@@ -469,53 +445,6 @@ if (qrEl) {
     fb.href = WEBSITE_URL; fb.target = '_blank'; fb.rel = 'noopener';
     fb.textContent = WEBSITE_URL;
     qrEl.appendChild(fb);
-  }
-}
-
-/* ═══ QR #2 — hidden high-res QR → opens THIS card (for printing) ═══ */
-var qrPrintEl = document.getElementById('qrprint');
-if (qrPrintEl && typeof QRCode !== 'undefined') {
-  new QRCode(qrPrintEl, {
-    text: CARD_URL,
-    width: 600, height: 600,
-    colorDark: '#000000', colorLight: '#ffffff',
-    correctLevel: QRCode.CorrectLevel.M
-  });
-}
-
-/* ---- Download printable QR → saves 700×700 PNG with white border ---- */
-var qrDlBtn = document.getElementById('qrDownloadBtn');
-if (qrDlBtn) {
-  if (typeof QRCode === 'undefined') {
-    qrDlBtn.style.display = 'none';
-  } else {
-    qrDlBtn.addEventListener('click', function(){
-      var c  = qrPrintEl ? qrPrintEl.querySelector('canvas') : null;
-      var im = qrPrintEl ? qrPrintEl.querySelector('img') : null;
-      var dataUrl = null;
-      if (c) { dataUrl = c.toDataURL('image/png'); }
-      else if (im && im.src && im.src.indexOf('data:image') === 0) { dataUrl = im.src; }
-
-      if (!dataUrl) { showToast('QR not ready yet — try again in a second'); return; }
-
-      var srcImg = new Image();
-      srcImg.onload = function(){
-        var out = document.createElement('canvas');
-        out.width = 700; out.height = 700;               /* white quiet zone for reliable scanning */
-        var ctx = out.getContext('2d');
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, 700, 700);
-        ctx.drawImage(srcImg, 50, 50, 600, 600);
-        var a = document.createElement('a');
-        a.href = out.toDataURL('image/png');
-        a.download = 'LVT-vCard-printable-QR.png';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        showToast('Printable QR saved — scanning it opens this card');
-      };
-      srcImg.src = dataUrl;
-    });
   }
 }
 
@@ -556,7 +485,7 @@ if (broBtn) {
   broBtn.addEventListener('click', function(){ showToast('Downloading company brochure…'); });
 }
 
-/* ---- Share button (phone share sheet, else WhatsApp) — shares this card ---- */
+/* ---- Share button (phone share sheet, else WhatsApp) ---- */
 var shareBtn = document.getElementById('shareBtn');
 if (shareBtn) {
   shareBtn.addEventListener('click', function(e){
