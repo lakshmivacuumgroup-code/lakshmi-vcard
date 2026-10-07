@@ -1,3 +1,4 @@
+
 {
   "cleanUrls": true,
   "rewrites": [
@@ -260,6 +261,37 @@
       "source": "/",
       "destination": "/piyushvcard",
       "has": [{ "type": "host", "value": "piyushvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/pravindhiwar/:path*",
+      "has": [{ "type": "host", "value": "pravindhiwar.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/pravindhiwar",
+      "has": [{ "type": "host", "value": "pravindhiwar.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/jagdishdharpure/:path*",
+      "has": [{ "type": "host", "value": "jagdishdharpure.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/jagdishdharpure",
+      "has": [{ "type": "host", "value": "jagdishdharpure.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/panchshilchavan/:path*",
+      "has": [{ "type": "host", "value": "panchshilchavan.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/panchshilchavan",
+      "has": [{ "type": "host", "value": "panchshilchavan.lakshmivacuum.com" }]
     }
   ]
 }
+```
