@@ -1,4 +1,3 @@
-
 {
   "cleanUrls": true,
   "rewrites": [
@@ -311,6 +310,26 @@
       "source": "/",
       "destination": "/vinaykumarvcard",
       "has": [{ "type": "host", "value": "vinaykumarvcard.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/vinaylvht/:path*",
+      "has": [{ "type": "host", "value": "vinaylvht.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/vinaylvht",
+      "has": [{ "type": "host", "value": "vinaylvht.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/:path*",
+      "destination": "/rajulvht/:path*",
+      "has": [{ "type": "host", "value": "rajulvht.lakshmivacuum.com" }]
+    },
+    {
+      "source": "/",
+      "destination": "/rajulvht",
+      "has": [{ "type": "host", "value": "rajulvht.lakshmivacuum.com" }]
     }
   ]
 }
