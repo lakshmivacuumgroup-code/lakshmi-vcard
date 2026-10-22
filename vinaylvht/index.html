@@ -161,6 +161,11 @@ img{max-width:100%;display:block}
 .loc > a{font-size:0.71rem; font-weight:700; color:var(--gold-3); display:inline-flex; align-items:center; gap:6px;}
 .loc a:active{color:var(--navy);}
 
+.phone-row{display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;}
+.phone-pill{flex:1; min-width:130px; display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; border:1px solid rgba(74,144,226,0.22); background:var(--ivory-2); font-size:0.74rem; font-weight:700; color:var(--navy);}
+.phone-pill i{color:var(--gold-3); font-size:0.9rem;}
+.phone-pill small{display:block; font-weight:500; color:var(--text-sub); font-size:0.62rem; text-transform:uppercase; letter-spacing:0.4px;}
+
 .social-row{display:flex; gap:10px; justify-content:center;}
 .social-btn{
   width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center;
@@ -232,13 +237,18 @@ img{max-width:100%;display:block}
   </div>
 
   <div class="section">
-    <div class="section-title"><i class="fa-solid fa-gem"></i>Location</div>
+    <div class="section-title"><i class="fa-solid fa-gem"></i>Contact &amp; Location</div>
+
+    <div class="phone-row">
+      <a class="phone-pill" href="tel:+918220003856"><i class="fa-solid fa-mobile-screen-button"></i><span>+91 82200 03856<small>Mobile</small></span></a>
+      <a class="phone-pill" href="tel:+914344277486"><i class="fa-solid fa-phone-volume"></i><span>04344 277486<small>Plant Landline</small></span></a>
+    </div>
 
     <div class="loc">
       <div class="loc-head"><i class="fa-solid fa-fire-flame-curved"></i><span>Hosur Unit — Tamil Nadu</span></div>
       <p>No. 1/406-17, SLV Nagar, Zuzuvadi, SIDCO 3rd Phase, Hosur, Tamil Nadu - 635126</p>
-      <div class="loc-map"><iframe src="https://maps.google.com/maps?q=12.7543,77.7867&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Hosur Unit map"></iframe></div>
-      <a href="https://www.google.com/maps/dir//No+1+406-17+SLV+Nagar+Zuzuvadi+SIDCO+3rd+Phase+Hosur+Tamil+Nadu+635126/@12.7543,77.7867,15z" target="_blank" rel="noopener">Get Directions <i class="fa-solid fa-location-arrow"></i></a>
+      <div class="loc-map"><iframe src="https://maps.google.com/maps?q=Lakshmi+Vacuum+Heat+Treaters+SLV+Nagar+Zuzuvadi+SIDCO+3rd+Phase+Hosur+635126&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Hosur Unit map"></iframe></div>
+      <a href="https://www.google.com/maps/dir//Lakshmi+Vacuum+Heat+Treaters+SLV+Nagar+Zuzuvadi+SIDCO+3rd+Phase+Hosur+Tamil+Nadu+635126" target="_blank" rel="noopener">Get Directions <i class="fa-solid fa-location-arrow"></i></a>
     </div>
 
   </div>
@@ -295,6 +305,7 @@ document.getElementById('saveContactBtn').addEventListener('click', function(e){
     'ORG:Lakshmi Vacuum Heat Treaters Pvt. Ltd.',
     'TITLE:Quality Executive, PPC, NPD',
     'TEL;TYPE=CELL:+918220003856',
+    'TEL;TYPE=WORK,VOICE:+914344277486',
     'EMAIL;TYPE=WORK:hosur@lakshmivacuum.com',
     'URL:https://www.lakshmivacuum.com',
     'ADR;TYPE=WORK:;;No. 1/406-17, SLV Nagar, Zuzuvadi, SIDCO 3rd Phase;Hosur;Tamil Nadu;635126;India',
@@ -328,4 +339,3 @@ if(t && !document.getElementById('shareTopIcon')){
 </script>
 </body>
 </html>
-
